@@ -1,0 +1,21 @@
+.login_page {
+  background-image: url('https://img.freepik.com/free-vector/abstract-geometric-wireframe-background_52683-59421.jpg?size=626&ext=jpg&ga=GA1.1.2113030492.1720224000&semt=ais_user'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 80px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.login_title {
+  color: black;
+  margin-bottom: 20px;
+}
