@@ -12,14 +12,19 @@ const EmployeeLogin = () => {
   });
 
   function capValue() {
-    axios.post('http://localhost:3000/employee/login', user).then((res) => {
-      console.log(res.data.message);
-      alert(res.data.message);
-      if (res.data.token) {
-        localStorage.setItem('token', res.data.token);
-        navigate('/employeelist');
-      }
-    });
+    axios
+      .post(
+        'https://employee-appication-server.vercel.app/employee/login',
+        user
+      )
+      .then((res) => {
+        console.log(res.data.message);
+        alert(res.data.message);
+        if (res.data.token) {
+          localStorage.setItem('token', res.data.token);
+          navigate('/employeelist');
+        }
+      });
   }
   return (  
     <div className='login_page'>

@@ -1,6 +1,6 @@
 import axios from "axios";
 const axiosInstance = axios.create({
-    baseURL:'http://localhost:3000'
+    baseURL:'https://employee-appication-server.vercel.app/'
 })
 axiosInstance.interceptors.request.use((config) => {
     const accessToken = localStorage.getItem('token');

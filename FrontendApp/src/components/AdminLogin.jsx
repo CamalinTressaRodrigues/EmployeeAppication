@@ -12,14 +12,16 @@ const AdminLogin = () => {
   });
 
   function capValue() {
-    axios.post('http://localhost:3000/admin/login', user).then((res) => {
-      console.log(res.data.message);
-      alert(res.data.message);
-      if (res.data.token) {
-        localStorage.setItem('token', res.data.token);
-        navigate('/operations');
-      }
-    });
+    axios
+      .post('https://employee-appication-server.vercel.app/admin/login', user)
+      .then((res) => {
+        console.log(res.data.message);
+        alert(res.data.message);
+        if (res.data.token) {
+          localStorage.setItem('token', res.data.token);
+          navigate('/operations');
+        }
+      });
   }
   return (
     <div className='login_page'>
