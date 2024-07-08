@@ -9,6 +9,8 @@ require('dotenv').config();
 //require cors
 const cors = require('cors');
 app.use(cors());
+//routing
+const path = require('path');
 //connecting database
 require('./db/mongoDb');
 //routes
@@ -26,8 +28,13 @@ app.use('/employee', employeelistRoute);
 app.use('/admin', adminDataRoute);
 app.use('/admin', adminCRUDoperations);
 
+//deployment
+app.use(express.static(path.join(__dirname, 'dist')));
 
-
+// Anything that doesn't match the above, send back index.html
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 
 
