@@ -14,7 +14,7 @@ const Navbar = () => {
               sx={{ flexGrow: 1 }}
               align="left"
             >
-              Employee App
+             Expressway 
             </Typography>
             {/* <Link to={'/'}>
               <Button color="inherit" style={{ color: 'white' }}>
