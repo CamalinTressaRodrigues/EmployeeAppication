@@ -28,6 +28,12 @@ app.use('/employee', employeelistRoute);
 app.use('/admin', adminDataRoute);
 app.use('/admin', adminCRUDoperations);
 
+app.use(cors({
+    origin: ['https://employee-appication-client.vercel.app/'],
+    credentials: true,
+    methods: ['POST', 'GET', 'PATCH', 'DELETE']
+}));
+
 //deployment
 app.use(express.static(path.join(__dirname, 'dist')));
 
@@ -35,9 +41,6 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
-
-
-
 
 app.listen(process.env.PORT, () => {
     console.log(`server is listening on PORT ${process.env.PORT}`);
